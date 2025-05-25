@@ -22,6 +22,7 @@ public:
 protected:
     void keyPressEvent(QKeyEvent *event) override; // Add this
     void resizeEvent(QResizeEvent *event) override; // Add this line
+    void closeEvent(QCloseEvent *event) override; // Eklendi
 
 private slots:
     void showFindDialog();
@@ -39,6 +40,9 @@ private slots:
     void openFile();     // Add this
     void saveFile();     // Add this
     void quickSave(); // Add this
+    void toggleReplacePanel(); // Yeni slot
+    void findBarReplaceAll();  // Yeni slot
+    void findBarReplaceNext(); // Yeni slot
 
 private:
     // QPlainTextEdit *plainTextEdit; // Remove this line
@@ -52,6 +56,8 @@ private:
     void findAllMatches(const QString &text);
     QVector<int> matchPositions;
     int currentMatchIndex;
+    void setFindBarHeight(bool expanded); // Yeni yardımcı fonksiyon
+    bool isModified; // Eklendi
 };
 
 #endif // MAINWINDOW_H

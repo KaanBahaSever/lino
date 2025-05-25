@@ -15,6 +15,14 @@ SOURCES += \
 HEADERS += \
     mainwindow.h
 
+RESOURCES += lino.qrc
+
+# If you use an .ico file in lino.rc, make sure it exists in the project directory.
+# For example, if you reference "letter-l.ico" in lino.rc, the file must be present.
+# If you do not have the icon, either:
+# 1. Place letter-l.ico in c:\Users\BAHA\Desktop\lino\
+# 2. Or comment/remove the icon line from lino.rc to avoid the build error.
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

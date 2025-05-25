@@ -5,10 +5,15 @@
 #include <QFile>
 #include <QTextStream>
 #include <QFileInfo> // Add this include
+#include <QIcon> // Add this include
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    // Set application icon from resource
+    a.setWindowIcon(QIcon(":/icons/app.ico"));
+
     MainWindow w;
 
     // Check for file argument (for "Open with Lino" feature)
