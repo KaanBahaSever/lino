@@ -52,7 +52,7 @@ MainWindow::MainWindow(int w, int h, const char *title)
     // Add padding: left=10, right=10
     int leftPadding = 5;
     int rightPadding = 5;
-    textEditor = new Fl_Text_Editor(leftPadding, 30, w - leftPadding - rightPadding, h - 30);
+    textEditor = new Fl_Text_Editor(leftPadding, 35, w - leftPadding - rightPadding, h - 35);
     textEditor->buffer(textBuffer);
     textEditor->textfont(FL_COURIER);
     textEditor->textsize(16);

@@ -11,6 +11,6 @@ int main(int argc, char** argv) {
     }
     
     // Show window and run application
-    window->show(argc, argv);
+    window->show();
     return Fl::run();
 }
