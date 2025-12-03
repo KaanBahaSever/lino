@@ -1,0 +1,5 @@
+cd c:\Users\BAHA\Desktop\lino
+mkdir build
+cd build
+cmake .. -G "MinGW Makefiles" -DCMAKE_PREFIX_PATH="C:/fltk-static"
+cmake --build .
