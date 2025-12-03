@@ -19,6 +19,8 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QCloseEvent> // Ekle
+#include <QPalette>
+#include <QColor>
 
 // --- FindBar widget ---
 class FindBar : public QWidget
@@ -102,12 +104,14 @@ MainWindow::MainWindow(QWidget *parent)
     resize(800, 600);
 
     QWidget *centralWidget = new QWidget(this);
+    centralWidget->setContentsMargins(0,0,0,0);
     setCentralWidget(centralWidget);
 
     QVBoxLayout *layout = new QVBoxLayout(centralWidget);
     layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(0);
 
-    findBar = new FindBar(this); // parent'ı this!
+    findBar = new FindBar(centralWidget);
     findBar->setFixedWidth(350);
     findBar->hide();
 
@@ -115,7 +119,7 @@ MainWindow::MainWindow(QWidget *parent)
     QFont initialFont = plainTextEdit->font();
     initialFont.setPointSize(12);
     plainTextEdit->setFont(initialFont);
-    plainTextEdit->setStyleSheet("QPlainTextEdit { padding: 5px; }");
+    plainTextEdit->setStyleSheet("QPlainTextEdit {border:none; padding: 10px; margin:0px; background-color:white;}");
     layout->addWidget(plainTextEdit);
 
     editorFont = plainTextEdit->font();
@@ -310,7 +314,7 @@ void MainWindow::setFindBarHeight(bool expanded)
         findBar->setFixedHeight(64);
     // FindBar yüksekliği kadar padding ekle
     int padding = findBar->height() + 8;
-    plainTextEdit->setStyleSheet(QString("QPlainTextEdit { padding: 5px; padding-top: %1px; }").arg(padding));
+    plainTextEdit->setStyleSheet(QString("QPlainTextEdit { border:none; padding: 5px; margin:0px; background-color:white; padding-top: %1px; }").arg(padding));
 }
 
 void MainWindow::showFindBar()
