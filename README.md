@@ -32,11 +32,6 @@ lino/
 
 This project is provided as-is for educational and personal use.
 
-## Acknowledgments
-
-- Built with [FLTK](https://www.fltk.org/) - Fast Light Toolkit
-- Uses CMake for cross-platform building
-
 ## Version History
 
 - **1.0** (2025-12-03): Initial release
